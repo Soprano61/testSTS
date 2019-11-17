@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Button">
+        <!--   <item name="android:background">@drawable/btn_corners_gradient_horizontal_sapphire</item>-->
+        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@drawable/text_button_white</item>
+
+    </style>
+</resources>
