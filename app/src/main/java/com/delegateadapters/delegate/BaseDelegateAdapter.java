@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public abstract class BaseDelegateAdapter
-    <VH extends BaseViewHolder, T> implements IDelegateAdapter<VH, T> {
+        <VH extends BaseViewHolder, T> implements IDelegateAdapter<VH, T> {
 
     abstract protected void onBindViewHolder(@NonNull View view,
                                              @NonNull T item, @NonNull VH viewHolder);
@@ -34,7 +34,7 @@ public abstract class BaseDelegateAdapter
     public final RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
                                                             int viewType) {
         final View inflatedView = LayoutInflater.from(parent.getContext())
-                                          .inflate(getLayoutId(), parent, false);
+                .inflate(getLayoutId(), parent, false);
         final VH holder = createViewHolder(inflatedView);
         holder.setListener(new BaseViewHolder.ItemInflateListener() {
             @Override
@@ -47,9 +47,9 @@ public abstract class BaseDelegateAdapter
 
     @Override
     public final void onBindViewHolder(
-        @NonNull VH holder,
-        @NonNull List<T> items,
-        int position) {
+            @NonNull VH holder,
+            @NonNull List<T> items,
+            int position) {
         holder.bind(items.get(position));
     }
 }

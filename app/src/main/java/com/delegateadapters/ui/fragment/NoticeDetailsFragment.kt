@@ -13,12 +13,12 @@ import kotlinx.android.synthetic.main.fragment_notice_details.view.*
 
 class NoticeDetailsFragment() : DialogFragment() {
 
-    private var ok: Button? = null
-    private var title: TextView? = null
-    private var gate: TextView? = null
-    private var flightDate: TextView? = null
+    private lateinit var ok: Button
+    private lateinit var title: TextView
+    private lateinit var gate: TextView
+    private lateinit var flightDate: TextView
 
-    var listener: OnSelectedListener? = null
+     var listener: OnSelectedListener? = null
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val myView = LayoutInflater.from(activity).inflate(R.layout.fragment_notice_details, null)
@@ -28,12 +28,12 @@ class NoticeDetailsFragment() : DialogFragment() {
         gate = myView.gate
         title = myView.title
 
-        title?.text = position.name
-        gate?.text =  position.gate
-        flightDate?.text =  position.flightDate.toString()
+        title.text = position.name
+        gate.text = position.gate
+        flightDate.text = position.flightDate.toString()
 
-        ok?.setOnClickListener {
-            dialog.dismiss()
+        ok.setOnClickListener {
+            dialog?.dismiss()
             onSelected()
         }
 

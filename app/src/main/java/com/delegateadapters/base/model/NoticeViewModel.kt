@@ -5,7 +5,7 @@ import java.io.Serializable
 import java.util.*
 
 
-class NoticeViewModel(val flightDate: Date, val gate: String,val name: String) : IComparableItem,
+class NoticeViewModel(val flightDate: Date, val gate: String, val name: String) : IComparableItem,
     Serializable {
 
     override fun id(): Any {
@@ -13,9 +13,10 @@ class NoticeViewModel(val flightDate: Date, val gate: String,val name: String) :
     }
 
     override fun content(): Any {
-        return  gate
+        return gate
     }
+
     override fun name(): String {
-        return  name
+        return name
     }
 }

@@ -13,11 +13,11 @@ import kotlinx.android.synthetic.main.fragment_event_details.view.*
 
 class EventDetailsFragment() : DialogFragment() {
 
-    private var ok: Button? = null
-    private var title: TextView? = null
-    private var startTime: TextView? = null
-    private var endTime: TextView? = null
-    private var name: TextView? = null
+    private lateinit var ok: Button
+    private lateinit var title: TextView
+    private lateinit var startTime: TextView
+    private lateinit var endTime: TextView
+    private lateinit var name: TextView
 
 
     var listener: OnSelectedListener? = null
@@ -31,13 +31,13 @@ class EventDetailsFragment() : DialogFragment() {
         title = myView.title
         name = myView.name
 
-        title?.text = position.name
-        startTime?.text = position.startTime.toString()
-        endTime?.text = position.endTime.toString()
-        name?.text = position.name
+        title.text = position.name
+        startTime.text = position.startTime.toString()
+        endTime.text = position.endTime.toString()
+        name.text = position.name
 
-        ok?.setOnClickListener {
-            dialog.dismiss()
+        ok.setOnClickListener {
+            dialog?.dismiss()
             onSelected()
         }
 

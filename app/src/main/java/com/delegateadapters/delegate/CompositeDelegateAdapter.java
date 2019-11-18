@@ -43,10 +43,9 @@ public class CompositeDelegateAdapter<T> extends RecyclerView.Adapter<RecyclerVi
     @Override
     public final void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         final IDelegateAdapter delegateAdapter = typeToAdapterMap.get(getItemViewType(position));
-        if (delegateAdapter != null) {
-            //noinspection unchecked
+        try {
             delegateAdapter.onBindViewHolder(holder, data, position);
-        } else {
+        } catch (Exception e) {
             throw new NullPointerException("can not find adapter for position " + position);
         }
     }

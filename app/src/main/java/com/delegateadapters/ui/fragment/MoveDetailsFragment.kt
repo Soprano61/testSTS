@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.fragment_move_details.view.*
 
 class MoveDetailsFragment() : DialogFragment() {
 
-    private var ok: Button? = null
-    private var title: TextView? = null
-    private var fromPlace: TextView? = null
-    private var toPlace: TextView? = null
-    private var estimateTime: TextView? = null
+    private lateinit var ok: Button
+    private lateinit var title: TextView
+    private lateinit var fromPlace: TextView
+    private lateinit var toPlace: TextView
+    private lateinit var estimateTime: TextView
 
-    var listener: OnSelectedListener? = null
+     var listener: OnSelectedListener? = null
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val myView = LayoutInflater.from(activity).inflate(R.layout.fragment_move_details, null)
@@ -30,13 +30,13 @@ class MoveDetailsFragment() : DialogFragment() {
         estimateTime = myView.estimateTime
         title = myView.title
 
-        title?.text = position.name
-        fromPlace?.text = position.fromPlace
-        toPlace?.text = position.toPlace
-        estimateTime?.text = position.estimateTime.toString()
+        title.text = position.name
+        fromPlace.text = position.fromPlace
+        toPlace.text = position.toPlace
+        estimateTime.text = position.estimateTime.toString()
 
-        ok?.setOnClickListener {
-            dialog.dismiss()
+        ok.setOnClickListener {
+            dialog?.dismiss()
             onSelected()
         }
 

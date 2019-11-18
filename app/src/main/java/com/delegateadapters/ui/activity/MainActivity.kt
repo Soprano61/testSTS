@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val diffAdapter by lazy {
+    private val diffAdapter  =
         DiffUtilCompositeAdapter.Builder()
             .add(NoticeDelegateAdapter(this))
             .add(MoveDelegateAdapter(this))
             .add(EventDelegateAdapter(this))
             .build()
-    }
+
 
     private fun generateNewData() {
         diffAdapter.swapData(MockDataFactory.prepareData())

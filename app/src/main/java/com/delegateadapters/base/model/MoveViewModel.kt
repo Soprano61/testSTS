@@ -10,7 +10,7 @@ class MoveViewModel(
     val name: String
 ) : IComparableItem, Serializable {
     override fun name(): String {
-        return  name
+        return name
     }
 
     override fun id(): Any = fromPlace + toPlace
